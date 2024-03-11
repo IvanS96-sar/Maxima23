@@ -1,22 +1,35 @@
 package org.example.generaliz;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Zadanie3 {
     public static void main(String[] args) {
-        Integer[] array = new Integer[]{1, 2, 3, 4, 5, 6};
-        System.out.println(Arrays.toString(array));
-        swap(array, 0, 2);
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+        System.out.println(list);
+        swap(list, 0, 4);
+        System.out.println(list);
 
-        String[] arr = new String[]{"Хлеб", "Молоко", "Яйца", "Кечуп", "Майонез"};
-        System.out.println(Arrays.toString(arr));
-        swap(arr, 1, 3);
+        List<String> list1 = new ArrayList<>();
+        list1.add("Хлеб");
+        list1.add("Молоко");
+        list1.add("Чай");
+        list1.add("Кофе");
+        list1.add("Шоколадка");
+        System.out.println(list1);
+        swap(list1, 0, 3);
+        System.out.println(list1);
     }
 
-    public static <T> void swap(T[] arr, int index1, int index2) {
-        T element = arr[index1];
-        arr[index1] = arr[index2];
-        arr[index2] = element;
-        System.out.println(Arrays.toString(arr));
+    public static <T> void swap(List<T> list, int index1, int index2) {
+        Collections.swap(list, index1, index2);
     }
 }
