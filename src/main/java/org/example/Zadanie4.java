@@ -8,19 +8,10 @@ public class Zadanie4 {
 
         String text = "Привет Максима";
 
-        FileWriter fileWriter = null;
-        try {
-            fileWriter = new FileWriter(file);
+        try (FileWriter fileWriter = new FileWriter(file)) {
             fileWriter.write(text);
         } catch (IOException e) {
             System.err.println("Ошибка записи файла");
-        } finally {
-            try {
-                fileWriter.close();
-            } catch (IOException e) {
-                System.err.println(e.getMessage());
-            }
-            System.out.println("Ресурс закрыт");
         }
         copyFileConten("source.txt", "target.txt");
     }
@@ -34,7 +25,8 @@ public class Zadanie4 {
      * @throw IOException ловим и обрабатываем, если произошла ошибка ввода
      */
     public static void copyFileConten(String sourcePath, String targetPath) {
-        try (FileReader fileReader = new FileReader(sourcePath); FileWriter fileWriter = new FileWriter(targetPath)) {
+        try (FileReader fileReader = new FileReader(sourcePath);
+             FileWriter fileWriter = new FileWriter(targetPath)) {
             if (!new File(targetPath).exists()) {
                 File file2 = new File(targetPath);
             }
