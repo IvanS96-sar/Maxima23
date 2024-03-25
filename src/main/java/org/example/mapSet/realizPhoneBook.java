@@ -1,5 +1,8 @@
 package org.example.mapSet;
 
+import lombok.extern.java.Log;
+
+@Log
 public class realizPhoneBook {
     public static void main(String[] args) {
         PhoneBook phoneBook = new PhoneBook();
@@ -8,7 +11,7 @@ public class realizPhoneBook {
         phoneBook.addContact("Дмитрий","89023257896");
         phoneBook.addContact("Михаил","89295479007");
         phoneBook.addContact("Артем","89063478965");
-        System.out.println(phoneBook);
+        log.info("Все контакты: " + phoneBook);
 
         phoneBook.getNumber("Роман");
         phoneBook.removeContact("Артем");

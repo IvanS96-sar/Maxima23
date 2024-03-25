@@ -1,7 +1,9 @@
 package org.example.mapSet;
 
-import java.util.HashSet;
+import lombok.extern.java.Log;
 
+import java.util.HashSet;
+@Log
 public class Zadanie4 {
     public static void main(String[] args) {
         HashSet<Integer> hashSet = new HashSet<>();
@@ -31,14 +33,12 @@ public class Zadanie4 {
 
         HashSet<Integer> result = new HashSet<>(hashSet);
         result.retainAll(hashSet1);
-        System.out.println(result);
-
+        log.info("Пересечение множеств: " + result);
         HashSet<Integer> result1 = new HashSet<>(hashSet);
         result1.addAll(hashSet1);
-        System.out.println(result1);
-
+        log.info("Объеденение множеств: " + result1);
         HashSet<Integer> result2 = new HashSet<>(hashSet);
         result2.removeAll(hashSet1);
-        System.out.println(result2);
+        log.info("Разность: " + result2);
     }
 }

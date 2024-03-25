@@ -1,14 +1,16 @@
 package org.example.mapSet;
 
+import lombok.extern.java.Log;
+
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Scanner;
-
+@Log
 public class UniqueName {
     public static void main(String[] args) {
         HashSet<String> hashSet = new HashSet<>();
 
-        System.out.println("Введите имя");
+        log.info("Введите имя");
         try (Scanner scanner = new Scanner(System.in)) {
             String name = "";
             while (!name.equalsIgnoreCase("stop")) {
@@ -16,11 +18,10 @@ public class UniqueName {
                 name = scanner.next();
 
             }
-            System.out.println("Уникальные имена:");
+            log.info("Уникальные имена:");
             for (String uniqName : hashSet) {
-                System.out.print(uniqName + " ");
+                log.info(" " + uniqName );
             }
-
         }
     }
 }
