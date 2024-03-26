@@ -1,7 +1,9 @@
 package org.example.mapSet;
 
-import java.util.HashMap;
+import lombok.extern.java.Log;
 
+import java.util.HashMap;
+@Log
 public class PhoneBook {
     private HashMap<String, String> phoneMap;
 
@@ -22,12 +24,12 @@ public class PhoneBook {
     }
 
     public void getNumber(String name) {
-        System.out.println("Номер: " + phoneMap.get(name));
+        log.info("Номер: " + phoneMap.get(name));
     }
 
     public void removeContact(String name) {
         phoneMap.remove(name);
-        System.out.println("Оставшиеся контакты: " + phoneMap);
+        log.info("Оставшиеся контакты: " + phoneMap);
     }
 }
 

@@ -1,3 +1,5 @@
+import lombok.extern.java.Log;
+
 public class DzThread {
     public static void main(String[] args) throws InterruptedException {
         StringBuilder stringBuilder = new StringBuilder("a");
@@ -15,7 +17,7 @@ public class DzThread {
 
     }
 }
-
+@Log
 class MyThread extends Thread {
     private StringBuilder sb;
 
@@ -27,7 +29,7 @@ class MyThread extends Thread {
     public void run() {
         synchronized (sb){
             for (int i = 0; i < 100; i++) {
-                System.out.println("Значение " + i + ": " + sb);
+               log.info("Значение " + i + ": " + sb);
             }
             char value = sb.charAt(0);
             value++;

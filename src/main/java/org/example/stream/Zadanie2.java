@@ -1,8 +1,10 @@
 package org.example.stream;
 
+import lombok.extern.java.Log;
+
 import java.util.Arrays;
 import java.util.List;
-
+@Log
 public class Zadanie2 {
     public static void main(String[] args) {
         List<Book> bookList = Arrays.asList(
@@ -16,7 +18,8 @@ public class Zadanie2 {
                 .filter(p -> p.getYear() > 2000)
                 .map(Book::getName)
                 .toList();
-        System.out.println("Список строк: " + list);
+        //System.out.println("Список строк: " + list);
+        log.info("Список строк: " + list);
 
     }
 }
